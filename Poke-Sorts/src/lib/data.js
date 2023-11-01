@@ -9,7 +9,6 @@ const getPokemon = async ({ url }) => {
 const getAllPokemon = async (url) => {
   const results = await axios.get(url)
     .then((response) => response.data);
-  console.log("I'm being executed")
   return results;
 };
 

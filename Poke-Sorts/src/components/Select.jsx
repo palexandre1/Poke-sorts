@@ -18,10 +18,12 @@ const loadPokemon = async (data) => {
 const pokemonQuery = () => ({
   queryKey: ['pokemon'],
   queryFn: async () => {
+    console.log("A fetch was ran")
     const response = await getAllPokemon(apiURL);
     return loadPokemon(response.results);
   },
   refetchOnWindowFocus: false,
+  refetchOnMount: false,
 });
 
 export const loader = (queryClient) => async () => {

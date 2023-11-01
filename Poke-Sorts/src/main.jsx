@@ -10,6 +10,7 @@ import {
 } from '@tanstack/react-query'
 import App from './components/App';
 import Select, { loader as pokemonLoader } from './components/Select';
+import Edit from './components/Edit';
 import ErrorPage from './components/ErrorPage';
 import './index.css';
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     path: 'select',
     element: <Select />,
     loader: pokemonLoader(queryClient),
+  },
+  {
+    path: 'edit',
+    element: <Edit />,
   },
 ]);
 
