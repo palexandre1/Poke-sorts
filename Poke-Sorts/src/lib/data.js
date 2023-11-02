@@ -12,4 +12,13 @@ const getAllPokemon = async (url) => {
   return results;
 };
 
-export { getPokemon, getAllPokemon };
+const containsPokemon = (obj, list) => {
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] === obj) {
+      return true;
+    }
+  }
+  return false;
+};
+
+export { getPokemon, getAllPokemon, containsPokemon };

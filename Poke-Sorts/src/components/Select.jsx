@@ -3,7 +3,7 @@ import {
   useQuery,
 } from '@tanstack/react-query'
 import { useLoaderData, Link } from 'react-router-dom'
-import { getPokemon, getAllPokemon } from '../lib/data';
+import { getPokemon, getAllPokemon, containsPokemon } from '../lib/data';
 
 const apiURL = 'https://pokeapi.co/api/v2/pokemon?limit=386';
 
@@ -35,14 +35,26 @@ export const loader = (queryClient) => async () => {
 };
 
 function Select() {
-  const [pokemonData, setPokemonData] = useState([]);
+  const [selected, setSelected] = useState([]);
   const { isPending, error, data } = useQuery(pokemonQuery());
 
   if (isPending) return 'Loading...';
 
   if (error) return `An error has occured: ${error.message}`;
-  console.log(data);
 
+  const handleClick = (pokemon) => {
+    if (containsPokemon(pokemon, selected)) {
+      setSelected(selected.filter((i) => i.id !== pokemon.id));
+    } else if (selected.length < 6) {
+      setSelected([...selected, pokemon]);
+    }
+    //if passed in pokemon is in selected state
+      //remove it from array
+    //otherwise if selected array has less than 6 pokemon
+      //add it to array
+  };
+
+  console.log(selected)
   return (
     <>
       <div className="flex items-center">
@@ -56,6 +68,7 @@ function Select() {
             <div
               key={pokemon.id}
               className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300"
+              onClick={() => handleClick(pokemon)}
             >
               <img
                 className="w-20 mx-auto mt-[-3rem] bg-white"
