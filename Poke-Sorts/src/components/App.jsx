@@ -7,13 +7,19 @@ function App() {
   const { state } = useLocation();
 
   useEffect(() => {
-    // console.log(state);
     if (state !== null) {
-      console.log(state)
+      console.log(state);
       const { roster } = state;
       setTeam(roster);
+      localStorage.setItem('team', JSON.stringify(roster));
+    } else {
+      const result = JSON.parse(localStorage.getItem('team'));
+      if (result) {
+        setTeam(result);
+      }
     }
   }, [state]);
+
   return (
     <>
       <h1>Poke Sorts</h1>
