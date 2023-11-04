@@ -59,22 +59,25 @@ function Select() {
 
   console.log(selected);
   return (
-    <>
-      <div className="flex items-center">
+    <div className="flex flex-col gap-10">
+      <div className="sticky top-0">
         <Link to="/">
-          <button type="button" className="flex sm:inline-flex justify-center items-center bg-gradient-to-tr from-pink-500 to-red-400 hover:from-pink-600 hover:to-red-500 active:from-pink-700 active:to-red-600 focus-visible:ring ring-pink-300 text-white font-semibold text-center rounded-md outline-none transition duration-100 px-5 py-2">Home</button>
+          <button type="button" className="px-4 py-2 font-bold text-white bg-rose-600 rounded hover:bg-rose-800">Home</button>
         </Link>
         <Link to="/" state={{ roster: selected }}>
-          <button type="submit" className="flex sm:inline-flex justify-center items-center bg-gradient-to-tr from-pink-500 to-red-400 hover:from-pink-600 hover:to-red-500 active:from-pink-700 active:to-red-600 focus-visible:ring ring-pink-300 text-white font-semibold text-center rounded-md outline-none transition duration-100 px-5 py-2">Submit</button>
+          <button type="submit" className="px-4 py-2 font-bold text-white bg-rose-600 rounded hover:bg-rose-800">Submit</button>
         </Link>
       </div>
-      <div className="w-full relative group">
+      <div className="flex flex-wrap pl-20">
         <div className="max-w-[1240px] mx-auto grid md:grid-cols-6 gap-8">
           {data.map((pokemon) => (
             <div
               key={pokemon.id}
-              className={`w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300 ${containsPokemon(pokemon, selected) && 'border-4 border-cyan-500'}`}
+              className={`w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300 cursor-pointer ${containsPokemon(pokemon, selected) && 'border-4 border-cyan-500'}`}
               onClick={() => handleClick(pokemon)}
+              onKeyDown={(e) => e.key === 'Enter' && handleClick(pokemon)}
+              role="button"
+              tabIndex="0"
             >
               <img
                 className="w-20 mx-auto mt-[-3rem] bg-white"
@@ -87,8 +90,9 @@ function Select() {
             </div>
           ))}
         </div>
+        <span>Hello World</span>
       </div>
-    </>
+    </div>
   );
 }
 
