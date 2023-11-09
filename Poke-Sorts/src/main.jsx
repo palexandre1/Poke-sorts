@@ -9,7 +9,8 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 import App from './pages/App';
-import Select, { loader as pokemonLoader } from './pages/Select';
+import Select from './pages/Select';
+import { loader as pokemonLoader } from './lib/data';
 import Edit from './pages/Edit';
 import ErrorPage from './pages/ErrorPage';
 import './index.css';
