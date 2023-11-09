@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom";
+} from 'react-router-dom';
 import {
   QueryClient,
   QueryClientProvider,
-} from '@tanstack/react-query'
-import App from './components/App';
-import Select, { loader as pokemonLoader } from './components/Select';
-import Edit from './components/Edit';
-import ErrorPage from './components/ErrorPage';
+} from '@tanstack/react-query';
+import App from './pages/App';
+import Select, { loader as pokemonLoader } from './pages/Select';
+import Edit from './pages/Edit';
+import ErrorPage from './pages/ErrorPage';
 import './index.css';
 
 const queryClient = new QueryClient();
