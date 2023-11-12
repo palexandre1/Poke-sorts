@@ -4,9 +4,12 @@ import Home from '../pages/Home';
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <>
+      <h1 className="">Poke Sorts</h1>
+      <div className="flex flex-col h-screen gap-y-5">
+        <Home />
+      </div>
+    </>
   );
 }
 
