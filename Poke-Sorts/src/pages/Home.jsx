@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, createRef, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import anime from 'animejs/lib/anime.es';
 import Pokemon from '../components/Pokemon';
 import DropdownMenu from '../components/DropdownMenu';
 import algoSort from '../helpers/algoSort';
@@ -12,6 +13,7 @@ function Home() {
   const [positions, setPositions] = useState([]);
   const [isDropdownVisible, setDropdownVisbile] = useState(false);
   const { state } = useLocation();
+  const elementRef = useRef(null);
 
   const handleClick = () => {
     setDropdownVisbile(!isDropdownVisible);
@@ -19,29 +21,10 @@ function Home() {
 
   const bubbleSort = () => {
     const idNumbers = team.map((pokemon) => pokemon.id);
-    const halfLength = Math.ceil(positions.length / 2);
-    const positionsArray = positions.slice(0, halfLength);
-    const coordinates = makeHashMap(positionsArray);
-    console.log(coordinates);
-    const swapArray = algoSort(idNumbers, 'bubble');
-    // console.log(swapArray);
+    const swapsArray = algoSort(idNumbers, 'bubble');
+    console.log(swapsArray);
 
-    //For each swap in swapArray,
-      //call swapAnimation.
-      //Run animation
-
-    // for (let i = 0; i < swapArray.length; i += 1) {
-    //   for (let j = 0; j < swapArray[i].length; j += 1) {
-    //     swapAnimation()
-    //   }
-    // }
-
-    //TEST Animation
-    for (let i = 0; i < swapArray[0].length; i += 1) {
-      const currentElement = swapArray[0][i];
-      const gap = coordinates[swapArray[0][1]] - coordinates[swapArray[0][0]];
-      getSwapAnimation(gap, i, currentElement);
-    }
+    getSwapAnimation(swapsArray, idNumbers);
 
     setDropdownVisbile(!isDropdownVisible);
   };
@@ -77,8 +60,7 @@ function Home() {
           <Pokemon
             key={pokemon.id}
             mon={pokemon}
-            list={positions}
-            add={setPositions}
+            ref={createRef()}
           />
         ))}
       </div>

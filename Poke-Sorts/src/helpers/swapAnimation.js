@@ -1,36 +1,77 @@
-function getSwapAnimation(position, index, id) {
-  console.log(position);
-  // Distance to move horizontally is the original position - new position
-  // use Math.sign to the get sign/direction for the translate
+import anime from 'animejs/lib/anime.es';
 
-  // use swap and coordinates to calculate animation sequence for one swap
-  // return animation
+function getSwapAnimation(swaps, original) {
+  const positionTracker = {};
+  const swapCount = {};
+  const leftSwapCount = {};
+  const animation = anime.timeline({
+    duration: 2000,
+    easing: 'linear',
+  });
 
-  const gapY = 100;
-  const gapYNeg = -100;
-  const gapX = position;
-  const gapXNeg = position * -1;
+  for (let i = 0; i < original.length; i += 1) {
+    const currentElement = document.getElementById(`pokemon #${original[i]}`);
+    positionTracker[original[i]] = currentElement.getBoundingClientRect().x;
+  }
 
-  const animation = 'swap 5000ms linear';
+  for (let i = 0; i < swaps.length; i += 1) {
+    const animeElementA = document.getElementById(`pokemon #${swaps[i][0]}`);
+    const animeElementB = document.getElementById(`pokemon #${swaps[i][1]}`);
 
-  const rule = [
-    {
-      transform: 'translate(0px)',
-    },
-    {
-      transform: `translate(0px,${index === 0 ? gapY : gapYNeg}px)`,
-    },
-    {
-      transform: `translate(${index === 0 ? gapX : gapXNeg}px, ${index === 0 ? gapY : gapYNeg}px)`,
-    },
-    {
-      transform: `translate(${index === 0 ? gapX : gapXNeg}px, 0px)`,
-    },
-  ];
+    let gapA = positionTracker[swaps[i][1]] - positionTracker[swaps[i][0]];
+    let gapB = positionTracker[swaps[i][0]] - positionTracker[swaps[i][1]];
 
-  const animationElement = document.getElementById(`pokemon #${id}`);
-  animationElement.animate(rule, 5000);
-  //const animationSheet = animationElement?.sheet?.insertRule(rule);
+    positionTracker[swaps[i][0]] += 128;
+    if (swapCount[swaps[i][0]] !== undefined) {
+      swapCount[swaps[i][0]] += 1;
+    } else {
+      swapCount[swaps[i][0]] = 1;
+    }
+    positionTracker[swaps[i][1]] -= 128;
+    if (swapCount[swaps[i][1]] !== undefined) {
+      swapCount[swaps[i][1]] -= 1;
+    } else {
+      swapCount[swaps[i][1]] = -1;
+    }
+
+    const swapA = [
+      {
+        translate: 0,
+      },
+      {
+        translateY: 125,
+      },
+      {
+        translateX: gapA * (swapCount[swaps[i][0]]),
+      },
+      {
+        translateY: 0,
+      },
+    ];
+    const swapB = [
+      {
+        translate: 0,
+      },
+      {
+        translateY: -125,
+      },
+      {
+        translateX: gapB * (swapCount[swaps[i][1]] * -1),
+      },
+      {
+        translateY: 0,
+      },
+    ];
+
+    animation.add({
+      targets: animeElementA,
+      keyframes: swapA,
+    });
+    animation.add({
+      targets: animeElementB,
+      keyframes: swapB,
+    });
+  }
 }
 
 export default getSwapAnimation;

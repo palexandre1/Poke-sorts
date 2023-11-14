@@ -1,24 +1,27 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-function Pokemon({ mon, list, add }) {
-  const [position, setPostion] = useState({ id: 0, x: 0, y: 0 });
-  const positionRef = useRef(null);
+const Pokemon = forwardRef(({ mon }, ref) => {
+  const [position, setPostion] = useState(0)
 
-  useEffect(() => {
-    const x = positionRef.current.offsetLeft;
-    const y = positionRef.current.offsetTop;
-    const { id } = mon;
-    const data = { id: id, x: x, y: y };
-    add((list) => ([...list, data]));
-  }, []);
+  const handleClick = () => {
+    const domNode = ref.current;
+    const boundingBox = domNode.getBoundingClientRect();
+    setPostion(boundingBox)
+    console.log(boundingBox);
+  }
+
+  // useEffect(() =>{
+  //   console.log('render')
+  // }, [position])
 
   return (
     <div
       className="flex flex-col box-border h-32 w-32 border-4"
       id={`pokemon #${mon.id}`}
       key={mon.id}
-      ref={positionRef}
+      ref={ref}
+      onClick={handleClick}
     >
       <img
         className="object-contain h-32 w-32"
@@ -28,7 +31,7 @@ function Pokemon({ mon, list, add }) {
       <span>{mon.id}</span>
     </div>
   );
-}
+});
 
 Pokemon.propTypes = {
   mon: PropTypes.object,
