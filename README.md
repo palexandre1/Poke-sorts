@@ -24,8 +24,7 @@ Triggers a visual representation of a sorting algorithm:
 1. Bubble Sort
 2. Others coming soon...
 
-![image](https://github.com/palexandre1/Poke-sorts/assets/19582756/ed616ab0-9d2b-4551-9ed2-5040d64fdf97)
-
+![gif of swap](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTB4NDFrbnY0eXh3ZjQ1bHR0MDR0N3BnNWloZG5zZDNrajVoZzNpYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NHoELEluUOIhDWLGUZ/giphy.gif)
 
 
 
