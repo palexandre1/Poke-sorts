@@ -4,6 +4,9 @@
 
 This project is a multi-page application. This application allows users to select up to 6 Pokemon on the select page to be displayed on the Home Page. These Pokemon can then be sorted in a visual sorting algorithm representation.
 
+## Home Page
+Main page where you can see your active team, selection persists in the browser via localStorage
+
 ## Select Page
 Select up to 6 Pokemon from Bulbasaur to Deoxys
 
