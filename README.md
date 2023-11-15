@@ -20,7 +20,7 @@ Select up to 6 Pokemon from Bulbasaur to Deoxys
 Coming soon...
 
 ## Sort Team
-Triggers a visual representation of a sorting algorithm:
+Triggers a visual representation of a sorting algorithm by Pokemon ID#:
 1. Bubble Sort
 2. Others coming soon...
 
