@@ -7,8 +7,14 @@ This project is a multi-page application. This application allows users to selec
 ## Home Page
 Main page where you can see your active team, selection persists in the browser via localStorage
 
+![image](https://github.com/palexandre1/Poke-sorts/assets/19582756/415877ec-e7ed-4361-affe-74f55c155aec)
+
+
 ## Select Page
 Select up to 6 Pokemon from Bulbasaur to Deoxys
+
+![image](https://github.com/palexandre1/Poke-sorts/assets/19582756/e0f3a7d6-4ee6-4766-bb94-f819ca883c2b)
+
 
 ## Edit Page
 Coming soon...
@@ -17,6 +23,9 @@ Coming soon...
 Triggers a visual representation of a sorting algorithm:
 1. Bubble Sort
 2. Others coming soon...
+
+![image](https://github.com/palexandre1/Poke-sorts/assets/19582756/ed616ab0-9d2b-4551-9ed2-5040d64fdf97)
+
 
 
 
