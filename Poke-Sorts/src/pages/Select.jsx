@@ -39,6 +39,10 @@ function Select() {
           <button type="submit" className="px-4 py-2 font-bold text-white bg-rose-600 rounded hover:bg-rose-800">Submit</button>
         </Link>
       </div>
+      <p className="text-lg">
+        Hello! On this page you may select no more than 6 Pokemon to be on your team.
+        Click on a Pokemon to select or deselect it. Click submit to finalize your team.
+      </p>
       <div className="flex flex-wrap pl-20">
         <div className="max-w-[1240px] mx-auto grid md:grid-cols-6 gap-8">
           {data.map((pokemon) => (
@@ -55,13 +59,12 @@ function Select() {
                 src={pokemon.sprites.front_default}
                 alt="/"
               />
-              <h2 className="capitalize text-2xl font-bold text-center py-8">
+              <span className="capitalize text-2xl font-bold text-center py-8 font-roboto">
                 {pokemon.name}
-              </h2>
+              </span>
             </div>
           ))}
         </div>
-        <span>Hello World</span>
       </div>
     </div>
   );

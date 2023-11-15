@@ -4,24 +4,19 @@ import PropTypes from 'prop-types';
 const Pokemon = forwardRef(({ mon }, ref) => {
   const [position, setPostion] = useState(0)
 
-  const handleClick = () => {
-    const domNode = ref.current;
-    const boundingBox = domNode.getBoundingClientRect();
-    setPostion(boundingBox)
-    console.log(boundingBox);
-  }
-
-  // useEffect(() =>{
-  //   console.log('render')
-  // }, [position])
+  // const handleClick = () => {
+  //   const domNode = ref.current;
+  //   const boundingBox = domNode.getBoundingClientRect();
+  //   setPostion(boundingBox)
+  //   console.log(boundingBox);
+  // }
 
   return (
     <div
-      className="flex flex-col box-border h-32 w-32 border-4"
+      className="flex flex-col box-border h-32 w-32"
       id={`pokemon #${mon.id}`}
       key={mon.id}
       ref={ref}
-      onClick={handleClick}
     >
       <img
         className="object-contain h-32 w-32"

@@ -5,7 +5,7 @@ function getSwapAnimation(swaps, original) {
   const swapCount = {};
   const leftSwapCount = {};
   const animation = anime.timeline({
-    duration: 2000,
+    duration: 1000,
     easing: 'linear',
   });
 

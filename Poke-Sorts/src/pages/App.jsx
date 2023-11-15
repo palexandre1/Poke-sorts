@@ -5,7 +5,7 @@ import Home from '../pages/Home';
 function App() {
   return (
     <>
-      <h1 className="">Poke Sorts</h1>
+      <span className="text-2xl font-roboto font-bold">Poke Sorts</span>
       <div className="flex flex-col h-screen gap-y-5">
         <Home />
       </div>

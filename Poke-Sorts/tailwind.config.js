@@ -6,7 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-      keyframes: {},
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+        'roboto' : ['Roboto', 'sans-serif']
+      },
     },
   },
   plugins: [],
