@@ -35,4 +35,5 @@ Triggers a visual representation of a sorting algorithm by Pokemon ID#:
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- All Pokemon assets come from the PokeApi (https://pokeapi.co/)
 - Anime.js used for animations
