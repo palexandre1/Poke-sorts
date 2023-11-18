@@ -1,13 +1,8 @@
 import anime from 'animejs/lib/anime.es';
 
-function getSwapAnimation(swaps, original) {
+function getSwapAnimation(swaps, original, animation) {
   const positionTracker = {};
   const swapCount = {};
-  const leftSwapCount = {};
-  const animation = anime.timeline({
-    duration: 1000,
-    easing: 'linear',
-  });
 
   for (let i = 0; i < original.length; i += 1) {
     const currentElement = document.getElementById(`pokemon #${original[i]}`);
@@ -18,8 +13,8 @@ function getSwapAnimation(swaps, original) {
     const animeElementA = document.getElementById(`pokemon #${swaps[i][0]}`);
     const animeElementB = document.getElementById(`pokemon #${swaps[i][1]}`);
 
-    let gapA = positionTracker[swaps[i][1]] - positionTracker[swaps[i][0]];
-    let gapB = positionTracker[swaps[i][0]] - positionTracker[swaps[i][1]];
+    const gapA = positionTracker[swaps[i][1]] - positionTracker[swaps[i][0]];
+    const gapB = positionTracker[swaps[i][0]] - positionTracker[swaps[i][1]];
 
     positionTracker[swaps[i][0]] += 128;
     if (swapCount[swaps[i][0]] !== undefined) {
