@@ -8,7 +8,16 @@ import shuffle from '../helpers/shuffle';
 
 function Select() {
   const [selected, setSelected] = useState([]);
+  const [showTeam, setShowTeam] = useState(false);
   const { isPending, error, data } = useQuery(pokemonQuery());
+
+  useEffect(() => {
+    if (selected.length > 0) {
+      setShowTeam(true);
+    } else {
+      setShowTeam(false);
+    }
+  }, [selected]);
 
   if (isPending) return 'Loading...';
 
@@ -45,6 +54,22 @@ function Select() {
           <button type="submit" className="px-4 py-2 font-bold text-white bg-rose-600 rounded hover:bg-rose-800">Submit</button>
         </Link>
         <button type="button" className="px-4 py-2 font-bold text-white bg-rose-600 rounded hover:bg-rose-800" onClick={handleRandom}>Random</button>
+        {showTeam && (
+          <div className="flex justify-center w-auto">
+            <div className="flex items-center w-auto rounded-lg bg-white p-4 text-gray-500 shadow dark:bg-gray-800 dark:text-gray-400 duration-300">
+              <div className="text-sm font-normal">Your current Roster:</div>
+              <div className="ml-auto flex items-center space-x-2">
+                {selected.map((pokemon) => (
+                  <img
+                    className="w-20 mx-auto"
+                    src={pokemon.sprites.front_default}
+                    alt="/"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       <p className="text-lg font-roboto font-bold text-center">
         Hello! On this page you may select no more than 6 Pokemon to be on your team.
