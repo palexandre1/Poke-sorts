@@ -22,7 +22,8 @@ Coming soon...
 ## Sort Team
 Triggers a visual representation of a sorting algorithm by Pokemon ID#:
 1. Bubble Sort
-2. Others coming soon...
+2. Selection Sort
+3. Others coming soon...
 
 ![gif of swap](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTB4NDFrbnY0eXh3ZjQ1bHR0MDR0N3BnNWloZG5zZDNrajVoZzNpYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NHoELEluUOIhDWLGUZ/giphy.gif)
 
