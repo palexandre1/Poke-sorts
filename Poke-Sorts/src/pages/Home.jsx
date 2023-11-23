@@ -14,7 +14,6 @@ function Home() {
   const [positions, setPositions] = useState([]);
   const [isDropdownVisible, setDropdownVisbile] = useState(false);
   const { state } = useLocation();
-  const elementRef = useRef(null);
 
   const handleClick = () => {
     setDropdownVisbile(!isDropdownVisible);
@@ -23,7 +22,23 @@ function Home() {
   const bubbleSort = () => {
     const idNumbers = team.map((pokemon) => pokemon.id);
     const swapsArray = algoSort(idNumbers, 'bubble');
-    console.log(swapsArray);
+
+    const animation = anime.timeline({
+      duration: 1000,
+      easing: 'linear',
+    });
+
+    getSwapAnimation(swapsArray, idNumbers, animation);
+    animation.finished.then(() => {
+      setSorted(true);
+    });
+
+    setDropdownVisbile(!isDropdownVisible);
+  };
+
+  const selectionSort = () => {
+    const idNumbers = team.map((pokemon) => pokemon.id);
+    const swapsArray = algoSort(idNumbers, 'selection');
 
     const animation = anime.timeline({
       duration: 1000,
@@ -62,7 +77,7 @@ function Home() {
           <button type="button" className="px-4 py-2 font-bold text-white bg-rose-600 rounded-md hover:bg-rose-800">Edit Team</button>
         </Link>
         <button type="button" className="px-4 py-2 font-bold text-white bg-rose-600 rounded-md hover:bg-rose-800" onClick={handleClick}>Sort Team</button>
-        {isDropdownVisible && <DropdownMenu bubble={bubbleSort} />}
+        {isDropdownVisible && <DropdownMenu bubble={bubbleSort} selection={selectionSort} />}
       </div>
       <div className="flex flex-row mt-20 justify-center">
         {team.length > 0 && team.map((pokemon) => (

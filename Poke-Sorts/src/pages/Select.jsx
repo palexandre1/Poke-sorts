@@ -62,6 +62,7 @@ function Select() {
                 {selected.map((pokemon) => (
                   <img
                     className="w-20 mx-auto"
+                    key={pokemon.id}
                     src={pokemon.sprites.front_default}
                     alt="/"
                   />

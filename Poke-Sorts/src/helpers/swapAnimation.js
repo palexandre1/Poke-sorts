@@ -16,17 +16,18 @@ function getSwapAnimation(swaps, original, animation) {
     const gapA = positionTracker[swaps[i][1]] - positionTracker[swaps[i][0]];
     const gapB = positionTracker[swaps[i][0]] - positionTracker[swaps[i][1]];
 
-    positionTracker[swaps[i][0]] += 128;
+    positionTracker[swaps[i][0]] += Math.abs(gapA);
     if (swapCount[swaps[i][0]] !== undefined) {
-      swapCount[swaps[i][0]] += 1;
+      swapCount[swaps[i][0]] += (gapA / 128);
     } else {
-      swapCount[swaps[i][0]] = 1;
+      swapCount[swaps[i][0]] = (gapA / 128);
     }
-    positionTracker[swaps[i][1]] -= 128;
+
+    positionTracker[swaps[i][1]] -= Math.abs(gapB);
     if (swapCount[swaps[i][1]] !== undefined) {
-      swapCount[swaps[i][1]] -= 1;
+      swapCount[swaps[i][1]] += (gapB / 128);
     } else {
-      swapCount[swaps[i][1]] = -1;
+      swapCount[swaps[i][1]] = (gapB / 128);
     }
 
     const swapA = [
@@ -37,7 +38,7 @@ function getSwapAnimation(swaps, original, animation) {
         translateY: 125,
       },
       {
-        translateX: gapA * (swapCount[swaps[i][0]]),
+        translateX: 128 * (swapCount[swaps[i][0]]),
       },
       {
         translateY: 0,
@@ -51,7 +52,7 @@ function getSwapAnimation(swaps, original, animation) {
         translateY: -125,
       },
       {
-        translateX: gapB * (swapCount[swaps[i][1]] * -1),
+        translateX: 128 * (swapCount[swaps[i][1]]),
       },
       {
         translateY: 0,
