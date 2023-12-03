@@ -71,12 +71,12 @@ function Home() {
     <>
       <div className="flex items-center pb-5 space-x-0.5">
         <Link to="/select">
-          <button type="button" className="px-4 py-2 font-bold text-white bg-rose-600 rounded-md hover:bg-rose-800">Select Team</button>
+          <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded-md hover:bg-rose-800">Select Team</button>
         </Link>
         <Link to="/edit">
-          <button type="button" className="px-4 py-2 font-bold text-white bg-rose-600 rounded-md hover:bg-rose-800">Edit Team</button>
+          <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded-md hover:bg-rose-800">Edit Team</button>
         </Link>
-        <button type="button" className="px-4 py-2 font-bold text-white bg-rose-600 rounded-md hover:bg-rose-800" onClick={handleClick}>Sort Team</button>
+        <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded-md hover:bg-rose-800" onClick={handleClick}>Sort Team</button>
         {isDropdownVisible && <DropdownMenu bubble={bubbleSort} selection={selectionSort} />}
       </div>
       <div className="flex flex-row mt-20 justify-center">

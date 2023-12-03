@@ -10,6 +10,12 @@ export default {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        pokemon: ['"Pokemon Solid"', 'sans-serif'],
+      },
+      colors: {
+        ball: {
+          500: '#E5281E',
+        },
       },
     },
   },
