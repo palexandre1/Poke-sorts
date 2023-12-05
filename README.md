@@ -27,6 +27,19 @@ Triggers a visual representation of a sorting algorithm by Pokemon ID#:
 
 ![gif of swap](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTB4NDFrbnY0eXh3ZjQ1bHR0MDR0N3BnNWloZG5zZDNrajVoZzNpYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NHoELEluUOIhDWLGUZ/giphy.gif)
 
+## Usage
+
+1. **Install the required dependencies**:
+    ```bash
+    npm install
+    ```
+
+2. **Start the development server**:
+    ```bash
+    npm run dev
+    ```
+3. **Access the application**:
+    Open your browser and navigate to `http://localhost:3000`.
 
 
 ## Technologies Used
