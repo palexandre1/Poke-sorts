@@ -1,7 +1,7 @@
 import { useState, useEffect, createRef, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import anime from 'animejs/lib/anime.es';
-import { Toast } from 'flowbite-react'
+import { Toast } from 'flowbite-react';
 import { HiCheck } from 'react-icons/hi';
 import Pokemon from '../components/Pokemon';
 import DropdownMenu from '../components/DropdownMenu';
@@ -11,7 +11,6 @@ import getSwapAnimation from '../helpers/swapAnimation';
 function Home() {
   const [team, setTeam] = useState([]);
   const [sorted, setSorted] = useState(false);
-  const [positions, setPositions] = useState([]);
   const [isDropdownVisible, setDropdownVisbile] = useState(false);
   const { state } = useLocation();
 
@@ -19,26 +18,9 @@ function Home() {
     setDropdownVisbile(!isDropdownVisible);
   };
 
-  const bubbleSort = () => {
+  const sort = (algo) => {
     const idNumbers = team.map((pokemon) => pokemon.id);
-    const swapsArray = algoSort(idNumbers, 'bubble');
-
-    const animation = anime.timeline({
-      duration: 1000,
-      easing: 'linear',
-    });
-
-    getSwapAnimation(swapsArray, idNumbers, animation);
-    animation.finished.then(() => {
-      setSorted(true);
-    });
-
-    setDropdownVisbile(!isDropdownVisible);
-  };
-
-  const selectionSort = () => {
-    const idNumbers = team.map((pokemon) => pokemon.id);
-    const swapsArray = algoSort(idNumbers, 'selection');
+    const swapsArray = algoSort(idNumbers, algo);
 
     const animation = anime.timeline({
       duration: 1000,
@@ -77,7 +59,7 @@ function Home() {
           <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded-md hover:bg-rose-800">Edit Team</button>
         </Link>
         <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded-md hover:bg-rose-800" onClick={handleClick}>Sort Team</button>
-        {isDropdownVisible && <DropdownMenu bubble={bubbleSort} selection={selectionSort} />}
+        {isDropdownVisible && <DropdownMenu sort={sort} />}
       </div>
       <div className="flex flex-row mt-20 justify-center">
         {team.length > 0 && team.map((pokemon) => (

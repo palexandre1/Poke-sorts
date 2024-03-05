@@ -13,7 +13,7 @@ const Pokemon = forwardRef(({ mon }, ref) => {
 
   return (
     <div
-      className="flex flex-col box-border h-32 w-32"
+      className="flex flex-col relative box-border h-32 w-32 border-0 border-black"
       id={`pokemon #${mon.id}`}
       key={mon.id}
       ref={ref}
@@ -23,7 +23,7 @@ const Pokemon = forwardRef(({ mon }, ref) => {
         src={mon.sprites.versions['generation-v']['black-white'].animated.front_default}
         alt="/"
       />
-      <span>{mon.id}</span>
+      <span className="absolute bottom-0 left-0">{mon.id}</span>
     </div>
   );
 });

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-function DropdownMenu({ bubble, selection }) {
+function DropdownMenu({ sort }) {
   const handleBubble = () => {
-    bubble();
+    sort('bubble');
   };
 
   const handleSelect = () => {
-    selection();
+    sort('selection');
   };
 
   const handleMerge = () => {
