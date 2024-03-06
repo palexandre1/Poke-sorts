@@ -1,5 +1,5 @@
 const bubbleSort = (arr) => {
-  let swaps = [];
+  const swaps = [];
   let noSwaps;
   const sortedArr = arr.slice();
   for (let i = sortedArr.length; i > 0; i -= 1) {

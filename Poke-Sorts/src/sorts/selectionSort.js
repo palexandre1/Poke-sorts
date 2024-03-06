@@ -1,5 +1,5 @@
 const selectionSort = (arr) => {
-  let swaps = [];
+  const swaps = [];
   const sortedArr = arr.slice();
   for (let i = 0; i < sortedArr.length; i += 1) {
     let min = i;

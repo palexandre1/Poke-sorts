@@ -21,6 +21,7 @@ function Home() {
   const sort = (algo) => {
     const idNumbers = team.map((pokemon) => pokemon.id);
     const swapsArray = algoSort(idNumbers, algo);
+    console.log(swapsArray);
 
     const animation = anime.timeline({
       duration: 1000,
