@@ -13,8 +13,8 @@ function DropdownMenu({ sort }) {
     sort('insertion');
   };
 
-  const handleMerge = () => {
-  };
+  // const handleMerge = () => {
+  // };
 
   return (
     <div>
@@ -22,7 +22,7 @@ function DropdownMenu({ sort }) {
         <li className="px-2 py-1.5 font-bold text-white bg-rose-600 rounded-lg hover:bg-rose-800 cursor-pointer" onClick={handleBubble}>Bubble</li>
         <li className="px-2 py-1.5 font-bold text-white bg-rose-600 rounded-lg hover:bg-rose-800 cursor-pointer" onClick={handleSelect}>Selection</li>
         <li className="px-2 py-1.5 font-bold text-white bg-rose-600 rounded-lg hover:bg-rose-800 cursor-pointer" onClick={handleInsertion}>Insertion</li>
-        <li className="px-2 py-1.5 font-bold text-white bg-rose-600 rounded-lg hover:bg-rose-800 cursor-not-allowed" onClick={handleMerge}>Merge</li>
+        {/* <li className="px-2 py-1.5 font-bold text-white bg-rose-600 rounded-lg hover:bg-rose-800 cursor-not-allowed" onClick={handleMerge}>Merge</li> */}
       </ul>
     </div>
   );

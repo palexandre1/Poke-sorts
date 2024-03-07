@@ -4,7 +4,7 @@ import {
 } from '@tanstack/react-query';
 import { useLoaderData, Link } from 'react-router-dom';
 import { containsPokemon, pokemonQuery } from '../lib/data';
-import shuffle from '../helpers/shuffle';
+import shuffle from '../helpers/shuffle.js';
 
 function Select() {
   const [selected, setSelected] = useState([]);

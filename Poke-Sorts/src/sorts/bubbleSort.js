@@ -18,7 +18,7 @@ const bubbleSort = (arr) => {
       break;
     }
   }
-  return { sortedArr, swaps };
+  return swaps;
 };
 
 export default bubbleSort;

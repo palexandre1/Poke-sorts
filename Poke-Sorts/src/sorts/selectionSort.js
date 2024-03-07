@@ -16,7 +16,7 @@ const selectionSort = (arr) => {
       sortedArr[min] = temp;
     }
   }
-  return { sortedArr, swaps };
+  return swaps;
 };
 
 export default selectionSort;

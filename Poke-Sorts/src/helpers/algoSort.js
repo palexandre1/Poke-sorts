@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import bubbleSort from '../sorts/bubbleSort';
-import selectionSort from '../sorts/selectionSort';
-import insertionSort from '../sorts/insertionSort';
+import bubbleSort from '../sorts/bubbleSort.js';
+import selectionSort from '../sorts/selectionSort.js';
+import insertionSort from '../sorts/insertionSort.js';
 
 function AlgoSort(array, sort) {
   const swapCount = 0;
@@ -10,16 +10,15 @@ function AlgoSort(array, sort) {
 
   switch (sort) {
     case 'bubble': {
-      const { arr, swaps } = bubbleSort(array);
+      const swaps = bubbleSort(array);
       return swaps;
     }
     case 'selection': {
-      const {arr, swaps } = selectionSort(array);
+      const swaps = selectionSort(array);
       return swaps;
     }
     case 'insertion': {
       const swaps = insertionSort(array);
-      console.log(swaps)
       return swaps;
     }
     default:

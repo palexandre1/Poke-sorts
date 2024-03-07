@@ -3,20 +3,17 @@ import { Link, useLocation } from 'react-router-dom';
 import anime from 'animejs/lib/anime.es';
 import { Toast } from 'flowbite-react';
 import { HiCheck } from 'react-icons/hi';
-import Pokemon from '../components/Pokemon';
-import DropdownMenu from '../components/DropdownMenu';
-import algoSort from '../helpers/algoSort';
-import getSwapAnimation from '../helpers/swapAnimation';
+import Header from '../components/Header.jsx';
+import Pokemon from '../components/Pokemon.jsx';
+import DropdownMenu from '../components/DropdownMenu.jsx';
+import algoSort from '../helpers/algoSort.js';
+import getSwapAnimation from '../helpers/swapAnimation.js';
 
 function Home() {
   const [team, setTeam] = useState([]);
   const [sorted, setSorted] = useState(false);
   const [isDropdownVisible, setDropdownVisbile] = useState(false);
   const { state } = useLocation();
-
-  const handleClick = () => {
-    setDropdownVisbile(!isDropdownVisible);
-  };
 
   const sort = (algo) => {
     const idNumbers = team.map((pokemon) => pokemon.id);
@@ -51,17 +48,12 @@ function Home() {
   }, [state]);
 
   return (
-    <>
-      <div className="flex items-center pb-5 space-x-0.5">
-        <Link to="/select">
-          <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded-md hover:bg-rose-800">Select Team</button>
-        </Link>
-        <Link to="/edit">
-          <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded-md hover:bg-rose-800">Edit Team</button>
-        </Link>
-        <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded-md hover:bg-rose-800" onClick={handleClick}>Sort Team</button>
-        {isDropdownVisible && <DropdownMenu sort={sort} />}
+    <div className="flex flex-col">
+      <Header />
+      <div className="flex flex-row mt-20 absolute left-0 justify-center">
+        <button type="button" className="bg-ball-500 text-white h-auto font-bold py-2 px-4 border border-blue-700 rounded" onClick={() => setDropdownVisbile(!isDropdownVisible)}>Sort Team</button>
       </div>
+      {isDropdownVisible && <DropdownMenu sort={sort} />}
       <div className="flex flex-row mt-20 justify-center">
         {team.length > 0 && team.map((pokemon) => (
           <Pokemon
@@ -91,7 +83,7 @@ function Home() {
         </Toast>
       </div>
       )}
-    </>
+    </div>
   );
 }
 
