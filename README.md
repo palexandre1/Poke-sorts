@@ -7,13 +7,13 @@ This project is a multi-page application. This application allows users to selec
 ## Home Page
 Main page where you can see your active team, selection persists in the browser via localStorage
 
-![image](https://github.com/palexandre1/Poke-sorts/assets/19582756/0d2b20cb-f52f-4e87-9201-993822476617)
+![image](https://github.com/palexandre1/Poke-sorts/assets/19582756/f00d256d-a222-4e35-b15b-c2a2e84b2ae1)
 
 
 ## Select Page
 Select up to 6 Pokemon from Bulbasaur to Deoxys
 
-![image](https://github.com/palexandre1/Poke-sorts/assets/19582756/0009f9f7-7a99-4b23-8c15-a7de532f5af7)
+![image](https://github.com/palexandre1/Poke-sorts/assets/19582756/a847f77c-51c4-462b-9d17-40000d700c4a)
 
 
 ## Edit Page
@@ -26,7 +26,7 @@ Triggers a visual representation of a sorting algorithm by Pokemon ID#:
 3. Insertion Sort
 4. Others coming soon...
 
-![gif of swap](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTB4NDFrbnY0eXh3ZjQ1bHR0MDR0N3BnNWloZG5zZDNrajVoZzNpYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NHoELEluUOIhDWLGUZ/giphy.gif)
+![gif of swap](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjQ5bmk4bjc5Z3gxcW55N2dlNm9lamRxZnc4d3M3anNrMWlrdWNyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WMW9nj07NxUFJmkwce/giphy.gif)
 
 ## Usage
 
