@@ -23,7 +23,7 @@ const Pokemon = forwardRef(({ mon }, ref) => {
         src={mon.sprites.versions['generation-v']['black-white'].animated.front_default}
         alt="/"
       />
-      <span className="absolute bottom-0 left-0">{mon.id}</span>
+      <span className="absolute top-0 left-0">{mon.id}</span>
     </div>
   );
 });

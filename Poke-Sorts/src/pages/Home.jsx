@@ -48,13 +48,13 @@ function Home() {
   }, [state]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       <Header />
       <div className="flex flex-row mt-20 absolute left-0 justify-center">
-        <button type="button" className="bg-ball-500 text-white h-auto font-bold py-2 px-4 border border-blue-700 rounded" onClick={() => setDropdownVisbile(!isDropdownVisible)}>Sort Team</button>
+        <button type="button" className="bg-ball-500 text-white h-auto font-bold py-2 px-4 border border-black rounded" onClick={() => setDropdownVisbile(!isDropdownVisible)}>Sort Team</button>
+        {isDropdownVisible && <DropdownMenu sort={sort} />}
       </div>
-      {isDropdownVisible && <DropdownMenu sort={sort} />}
-      <div className="flex flex-row mt-20 justify-center">
+      <div className="flex flex-row mt-48 justify-center">
         {team.length > 0 && team.map((pokemon) => (
           <Pokemon
             key={pokemon.id}

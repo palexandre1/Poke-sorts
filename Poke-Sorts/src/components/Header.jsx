@@ -21,12 +21,14 @@ const Header = function () {
         </div>
         {/* nav links here */}
         <ul className={`md:flex pl-9 md:pl-0 md:items-center md:pb-0 pb-12`}>
+          {window.location.pathname !== '/select' && (
           <Link to="/select">
             <button type="button" className="text-white py-1 px-3 md:md-8 rounded md:static">Select Team</button>
           </Link>
-          <Link to="/edit">
-            <button type="button" className="text-white py-1 px-3 md:md-8 rounded md:static">Edit Team</button>
-          </Link>
+          /* <Link to="/edit">
+            <button type="button" className="text-white py-1 px-3 md:md-8 rounded md:static">
+            Edit Team</button>
+          </Link> */)}
         </ul>
       </div>
     </div>

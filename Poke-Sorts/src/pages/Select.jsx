@@ -5,6 +5,7 @@ import {
 import { useLoaderData, Link } from 'react-router-dom';
 import { containsPokemon, pokemonQuery } from '../lib/data';
 import shuffle from '../helpers/shuffle.js';
+import Header from '../components/Header.jsx';
 
 function Select() {
   const [selected, setSelected] = useState([]);
@@ -46,14 +47,15 @@ function Select() {
 
   return (
     <div className="flex flex-col gap-10">
-      <div className="sticky top-0">
+      <Header />
+      <div className="sticky top-16">
         <Link to="/">
-          <button type="button" className="px-4 py-2 font-bold text-white bg-rose-600 rounded hover:bg-rose-800">Home</button>
+          <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded hover:bg-rose-800">Home</button>
         </Link>
         <Link to="/" state={{ roster: selected }}>
-          <button type="submit" className="px-4 py-2 font-bold text-white bg-rose-600 rounded hover:bg-rose-800">Submit</button>
+          <button type="submit" className="px-4 py-2 font-bold text-white bg-ball-500 rounded hover:bg-rose-800">Submit</button>
         </Link>
-        <button type="button" className="px-4 py-2 font-bold text-white bg-rose-600 rounded hover:bg-rose-800" onClick={handleRandom}>Random</button>
+        <button type="button" className="px-4 py-2 font-bold text-white bg-ball-500 rounded hover:bg-rose-800" onClick={handleRandom}>Random</button>
         {showTeam && (
           <div className="flex justify-center w-auto">
             <div className="flex items-center w-auto rounded-lg bg-white p-4 text-gray-500 shadow dark:bg-gray-800 dark:text-gray-400 duration-300">
