@@ -7,7 +7,7 @@ This project is a multi-page application. This application allows users to selec
 ## Home Page
 Main page where you can see your active team, selection persists in the browser via localStorage
 
-![image](https://github.com/palexandre1/Poke-sorts/assets/19582756/f00d256d-a222-4e35-b15b-c2a2e84b2ae1)
+![gif of swap](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjQ5bmk4bjc5Z3gxcW55N2dlNm9lamRxZnc4d3M3anNrMWlrdWNyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WMW9nj07NxUFJmkwce/giphy.gif)
 
 
 ## Select Page
@@ -26,7 +26,7 @@ Triggers a visual representation of a sorting algorithm by Pokemon ID#:
 3. Insertion Sort
 4. Others coming soon...
 
-![gif of swap](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjQ5bmk4bjc5Z3gxcW55N2dlNm9lamRxZnc4d3M3anNrMWlrdWNyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WMW9nj07NxUFJmkwce/giphy.gif)
+
 
 ## Usage
 
