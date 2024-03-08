@@ -26,7 +26,7 @@ Triggers a visual representation of a sorting algorithm by Pokemon ID#:
 3. Insertion Sort
 4. Others coming soon...
 
-
+![gif of swap](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdG0zZzRsanA3aGdncnc3M3ZhaDNqcWtodGJrc3Bod2hpNHh1b3Z6NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JvJif8VjR5x5COkpCo/giphy.gif)
 
 ## Usage
 
